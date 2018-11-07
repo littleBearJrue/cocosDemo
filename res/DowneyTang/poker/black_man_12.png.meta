@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "7bdf94d8-a79b-413b-a435-9f5a076dabd8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "black_man_12": {
+      "ver": "1.0.3",
+      "uuid": "da2012bb-973f-4a37-97e2-4287f702c3fd",
+      "rawTextureUuid": "7bdf94d8-a79b-413b-a435-9f5a076dabd8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 3,
+      "trimY": 4,
+      "width": 162,
+      "height": 218,
+      "rawWidth": 168,
+      "rawHeight": 226,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

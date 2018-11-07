@@ -1,0 +1,92 @@
+option optimize_for = LITE_RUNTIME;
+package XGMsg;
+
+import "MsgType.proto";
+
+
+//data
+
+message MsgHeadData{
+  required int32 cmd = 1;
+  required int32 msgSize = 2;
+}
+
+message RoomReqLoginData{
+  required int32 tid = 1;     // 桌子ID
+  required int32 uid = 2;     // 用户ID
+  required bytes mtkey  = 3;  // mtkey
+  required bytes imgUrl  = 4; // 用户图片Url
+  required int32 giftId = 5;
+  optional bytes passworld = 6;
+}
+
+
+message TableUserData{
+  required int32 seatId          = 1;//座位id (lua下标从1开始)
+  required int32 uid             = 2;    //用户id
+  required int64 totalChips      = 3; //用户钱数
+  required int32 exp             = 4;   //用户经验
+  required int32 vip             = 5;  //VIP标识
+  required bytes name            = 6;  //用户名
+  required bytes gender          = 7;  //性别
+  required bytes photoUrl        = 8;  //用户图片url
+  required int32 winRound        = 9;   //用户赢盘数
+  required int32 loseRound       = 10;   //用户输盘数
+  required bytes currentPlace    = 11; //用户所在地
+  required bytes homeTown        = 12; //用户家乡
+  required int32 giftId          = 13;  //用户默认道具
+  required int64 seatChips       = 14; //座位的钱数
+  required int64 betInChips      = 15; //座位的总下注数
+  required int32 operationStatus = 16;  //当前操作类型
+}
+
+message RoomReqLoginSuccess{
+  required int64 smallBlind = 1;                 //小盲注
+  required int64 minBuyIn = 2;                 //最小买入
+  required int64 maxBuyIn = 3;                 //最大买入
+  required bytes tableName = 4;              //桌子名字
+  required int32 roomType = 5;         //房间场别
+  required int32 tableLevel = 6;         //房间级别
+  required int64 userChips = 7;                 //用户钱数
+  required int32 betInExpire = 8;         //下注最大时间
+  required int32 gameStatus = 9;          //游戏状态
+  required int32 maxSeatCount = 10;          //最大座位数量
+  required int32 roundCount = 11;              //游戏局数
+  required int32 dealerSeatId = 12;          //庄家座位
+  required int32 chipsPotsCount = 13;          //奖池数量
+  repeated int64 chipsPots =14;
+  repeated int32 publicCards = 15;
+  required int32 betInSeatId = 16; //目前正在下注的座位
+
+  optional int64 callNeedChips = 17;  //跟注需要钱数
+  optional int64 minRaiseChips = 18;  //加注最小钱数
+  optional int64 maxRaiseChips = 19;  //加注最大钱数
+
+  required int32 playerCount = 20;   //玩家数量(坐下)
+
+  repeated TableUserData tableUserData = 21;
+
+  required int32 handCardFlag = 22; //是否有手牌
+  optional int32 handCard1 = 23; 
+  optional int32 handCard2 = 24; 
+
+  repeated int32 platFlags = 25;
+
+  required int32 tableFlag = 26;
+  required int64 playerAnte = 27; //该轮下的前注
+
+}
+
+
+message RoomReqConnectData{
+  required bytes ip  = 1;
+  required int32 port = 2; 
+  required int32 version = 3; 
+}
+
+message RoomReqSitDownData{
+  required int32 seatId  = 1;
+  required int64 buyinChips = 2; 
+}
+
+

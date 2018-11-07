@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<frame_animations>
+	<animation id="100" name="effect_attack1" delay="0.05" anrx="0.5" anry="0.5">
+		<plist>test/ani/boy.plist</plist>
+		<png>test/ani/boy.png</png>
+		<frames>
+			<frame>boy1.png</frame>
+			<frame>boy2.png</frame>
+			<frame>boy3.png</frame>
+			<frame>boy4.png</frame>
+			<frame>boy5.png</frame>
+			<frame>boy6.png</frame>
+			<frame>boy7.png</frame>
+			<frame>boy8.png</frame>
+			<frame>boy9.png</frame>
+			<frame>boy10.png</frame>
+			<frame>boy11.png</frame>
+			<frame>boy12.png</frame>
+		</frames>
+	</animation>
+</frame_animations>

@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "362a93b2-9625-4b73-987a-649025ee3272",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "red_man_13": {
+      "ver": "1.0.3",
+      "uuid": "9a969945-7bde-425e-9494-8ddf9e34580e",
+      "rawTextureUuid": "362a93b2-9625-4b73-987a-649025ee3272",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 3,
+      "trimY": 4,
+      "width": 162,
+      "height": 218,
+      "rawWidth": 168,
+      "rawHeight": 226,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

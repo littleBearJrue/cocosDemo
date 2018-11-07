@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E6A7A0E-DDD8-4BAA-8B22-C964069364ED}</ProjectGuid>
+    <ProjectName>cocos317_lua</ProjectName>
+    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d-x\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d-x\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d-x\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d-x\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <SourcePath>$(SourcePath);</SourcePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(TargetName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\Classes\core;$(ProjectDir)..\Classes\core\net;$(ProjectDir)..\Classes\core\memory;$(ProjectDir)..\Classes\core\utils;$(ProjectDir)..\Classes\core\io;$(ProjectDir)..\Classes\core\lua;$(ProjectDir)..\Classes\core\event;$(ProjectDir)..\Classes\core\graphics;$(ProjectDir)..\Classes\reader;$(ProjectDir)..\Classes\reader\collider;$(ProjectDir)..\Classes\reader\animation;$(ProjectDir)..\Classes\reader\dragonBones;$(ProjectDir)..\Classes\reader\dragonBones\animation;$(ProjectDir)..\Classes\reader\dragonBones\armature;$(ProjectDir)..\Classes\reader\dragonBones\cocos2dx;$(ProjectDir)..\Classes\reader\dragonBones\core;$(ProjectDir)..\Classes\reader\dragonBones\event;$(ProjectDir)..\Classes\reader\dragonBones\factory;$(ProjectDir)..\Classes\reader\dragonBones\geom;$(ProjectDir)..\Classes\reader\dragonBones\model;$(ProjectDir)..\Classes\reader\dragonBones\parser;$(ProjectDir)..\Classes\runtime;$(ProjectDir)..\Classes\protobuf-lite;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot)external;$(EngineRoot)external\pbc;$(EngineRoot)external\unzip;$(EngineRoot)external\json;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)external\curl\include\win32;$(EngineRoot)extensions;$(EngineRoot)tools\simulator\libsimulator\lib;$(EngineRoot)tools\simulator\libsimulator\lib\protobuf-lite;$(EngineRoot);%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;_USRLUASTATIC;_USRLIBSIMSTATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(ProjectDir)../../../simulator/win32/$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(ProjectDir)../../../simulator/win32/$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>cocos317_lua.h</HeaderFileName>
+      <InterfaceIdentifierFileName>cocos317_lua_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>cocos317_lua_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/cocos317_lua.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <CustomBuildStep>
+      <Command>if not exist "$(LocalDebuggerWorkingDirectory)" mkdir "$(LocalDebuggerWorkingDirectory)"
+xcopy /Y /Q "$(OutDir)*.dll" "$(LocalDebuggerWorkingDirectory)"
+xcopy "$(ProjectDir)..\..\..\res" "$(LocalDebuggerWorkingDirectory)\res" /D /E /I /F /Y
+xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /I /F /Y</Command>
+      <Outputs>$(TargetName).cab</Outputs>
+      <Inputs>$(TargetFileName)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot)external;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot)external\curl\include\win32;$(EngineRoot);$(EngineRoot)tools\simulator\libsimulator\lib;$(EngineRoot)tools\simulator\libsimulator\lib\protobuf-lite;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;_USRLUASTATIC;_USRLIBSIMSTATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <ForcedIncludeFiles>algorithm</ForcedIncludeFiles>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(ProjectDir)../../../simulator/win32/$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>cocos317_lua.h</HeaderFileName>
+      <InterfaceIdentifierFileName>cocos317_lua_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>cocos317_lua_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/cocos317_lua.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\core\event\XGBaseSys.h" />
+    <ClInclude Include="..\Classes\core\event\XGDelegate.h" />
+    <ClInclude Include="..\Classes\core\event\XGEvent.h" />
+    <ClInclude Include="..\Classes\core\event\XGLogicEvent.h" />
+    <ClInclude Include="..\Classes\core\event\XGLogicSys.h" />
+    <ClInclude Include="..\Classes\core\graphics\XGDBFrameAnimation.h" />
+    <ClInclude Include="..\Classes\core\graphics\XGFrameAnimation.h" />
+    <ClInclude Include="..\Classes\core\io\VxFile.h" />
+    <ClInclude Include="..\Classes\core\io\VxIOStream.h" />
+    <ClInclude Include="..\Classes\core\io\VxResourceManager.h" />
+    <ClInclude Include="..\Classes\core\io\VxStream.h" />
+    <ClInclude Include="..\Classes\core\lua\XGCCallLuaManager.h" />
+    <ClInclude Include="..\Classes\core\lua\XGLuaBindings.h" />
+    <ClInclude Include="..\Classes\core\memory\VxAllocator.h" />
+    <ClInclude Include="..\Classes\core\memory\VxBlockAllocator.h" />
+    <ClInclude Include="..\Classes\core\net\NxProtocol.h" />
+    <ClInclude Include="..\Classes\core\net\VxConst.h" />
+    <ClInclude Include="..\Classes\core\net\VxDef.h" />
+    <ClInclude Include="..\Classes\core\net\VxExternal.h" />
+    <ClInclude Include="..\Classes\core\net\VxMsg.h" />
+    <ClInclude Include="..\Classes\core\net\VxNetClient.h" />
+    <ClInclude Include="..\Classes\core\net\VxNetManager.h" />
+    <ClInclude Include="..\Classes\core\net\VxObject.h" />
+    <ClInclude Include="..\Classes\core\net\VxProtocol.h" />
+    <ClInclude Include="..\Classes\core\net\VxSocket.h" />
+    <ClInclude Include="..\Classes\core\net\VxSocketClient.h" />
+    <ClInclude Include="..\Classes\core\net\VxType.h" />
+    <ClInclude Include="..\Classes\core\XGMacros.h" />
+    <ClInclude Include="..\Classes\core\utils\VxConvert.h" />
+    <ClInclude Include="..\Classes\core\utils\VxLocalObject.h" />
+    <ClInclude Include="..\Classes\core\utils\VxNativeUtils.h" />
+    <ClInclude Include="..\Classes\core\utils\VxTime.h" />
+    <ClInclude Include="..\Classes\core\utils\XGXml.h" />
+    <ClInclude Include="..\Classes\reader\animation\AnimateClip.h" />
+    <ClInclude Include="..\Classes\reader\animation\AnimationClip.h" />
+    <ClInclude Include="..\Classes\reader\animation\AnimationClipProperties.h" />
+    <ClInclude Include="..\Classes\reader\animation\AnimationManager.h" />
+    <ClInclude Include="..\Classes\reader\animation\Bezier.h" />
+    <ClInclude Include="..\Classes\reader\animation\Easing.h" />
+    <ClInclude Include="..\Classes\reader\collider\Collider.h" />
+    <ClInclude Include="..\Classes\reader\collider\ColliderManager.h" />
+    <ClInclude Include="..\Classes\reader\collider\Contract.h" />
+    <ClInclude Include="..\Classes\reader\collider\Intersection.h" />
+    <ClInclude Include="..\Classes\reader\CreatorReader.h" />
+    <ClInclude Include="..\Classes\reader\CreatorReader_generated.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\Animation.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\AnimationState.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\BaseTimelineState.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\IAnimatable.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\TimelineState.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\animation\WorldClock.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\Armature.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\Bone.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\Constraint.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\DeformVertices.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\IArmatureProxy.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\Slot.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\armature\TransformObject.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\cocos2dx\CCArmatureDisplay.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\cocos2dx\CCDragonBonesHeaders.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\cocos2dx\CCFactory.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\cocos2dx\CCSlot.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\cocos2dx\CCTextureAtlasData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\core\BaseObject.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\core\DragonBones.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\DragonBonesHeaders.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\event\EventObject.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\event\IEventDispatcher.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\factory\BaseFactory.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\geom\ColorTransform.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\geom\Matrix.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\geom\Point.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\geom\Rectangle.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\geom\Transform.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\AnimationConfig.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\AnimationData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\ArmatureData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\BoundingBoxData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\CanvasData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\ConstraintData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\DisplayData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\DragonBonesData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\SkinData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\TextureAtlasData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\model\UserData.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\parser\BinaryDataParser.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\parser\DataParser.h" />
+    <ClInclude Include="..\Classes\reader\dragonBones\parser\JSONDataParser.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\code_generators.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\flatbuffers.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\grpc.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\hash.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\idl.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\reflection.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\reflection_generated.h" />
+    <ClInclude Include="..\Classes\reader\flatbuffers\util.h" />
+    <ClInclude Include="..\Classes\reader\lua-bindings\creator_reader_bindings.hpp" />
+    <ClInclude Include="..\Classes\reader\lua-bindings\dragonbones\lua_dragonbones_auto.hpp" />
+    <ClInclude Include="..\Classes\reader\lua-bindings\dragonbones\lua_dragonbones_manual.hpp" />
+    <ClInclude Include="..\Classes\reader\lua-bindings\reader\lua_creator_reader_auto.hpp" />
+    <ClInclude Include="..\Classes\reader\lua-bindings\reader\lua_creator_reader_manual.hpp" />
+    <ClInclude Include="..\Classes\reader\Macros.h" />
+    <ClInclude Include="..\Classes\reader\ui\PageView.h" />
+    <ClInclude Include="..\Classes\reader\ui\RichtextStringVisitor.h" />
+    <ClInclude Include="..\Classes\reader\ui\WidgetExport.h" />
+    <ClInclude Include="..\Classes\sqlite3\lsqlite3.h" />
+    <ClInclude Include="..\Classes\sqlite3\sqlite3.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SimulatorWin.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\core\event\XGBaseSys.cpp" />
+    <ClCompile Include="..\Classes\core\event\XGDelegate.cpp" />
+    <ClCompile Include="..\Classes\core\event\XGEvent.cpp" />
+    <ClCompile Include="..\Classes\core\event\XGLogicEvent.cpp" />
+    <ClCompile Include="..\Classes\core\event\XGLogicSys.cpp" />
+    <ClCompile Include="..\Classes\core\graphics\XGDBFrameAnimation.cpp" />
+    <ClCompile Include="..\Classes\core\graphics\XGFrameAnimation.cpp" />
+    <ClCompile Include="..\Classes\core\io\VxFile.cpp" />
+    <ClCompile Include="..\Classes\core\io\VxIOStream.cpp" />
+    <ClCompile Include="..\Classes\core\io\VxResourceManager.cpp" />
+    <ClCompile Include="..\Classes\core\io\VxStream.cpp" />
+    <ClCompile Include="..\Classes\core\lua\XGCCallLuaManager.cpp" />
+    <ClCompile Include="..\Classes\core\lua\XGLuaBindings.cpp" />
+    <ClCompile Include="..\Classes\core\memory\VxAllocator.cpp" />
+    <ClCompile Include="..\Classes\core\memory\VxBlockAllocator.cpp" />
+    <ClCompile Include="..\Classes\core\net\NxProtocol.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxMsg.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxNetClient.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxNetManager.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxObject.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxProtocol.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxSocket.cpp" />
+    <ClCompile Include="..\Classes\core\net\VxSocketClient.cpp" />
+    <ClCompile Include="..\Classes\core\utils\VxConvert.cpp" />
+    <ClCompile Include="..\Classes\core\utils\VxLocalObject.cpp" />
+    <ClCompile Include="..\Classes\core\utils\VxNativeUtils.cpp" />
+    <ClCompile Include="..\Classes\core\utils\VxTime.cpp" />
+    <ClCompile Include="..\Classes\core\utils\XGXml.cpp" />
+    <ClCompile Include="..\Classes\reader\animation\AnimateClip.cpp" />
+    <ClCompile Include="..\Classes\reader\animation\AnimationClip.cpp" />
+    <ClCompile Include="..\Classes\reader\animation\AnimationManager.cpp" />
+    <ClCompile Include="..\Classes\reader\animation\Bezier.cpp" />
+    <ClCompile Include="..\Classes\reader\animation\Easing.cpp" />
+    <ClCompile Include="..\Classes\reader\collider\Collider.cpp" />
+    <ClCompile Include="..\Classes\reader\collider\ColliderManager.cpp" />
+    <ClCompile Include="..\Classes\reader\collider\Contract.cpp" />
+    <ClCompile Include="..\Classes\reader\collider\Intersection.cpp" />
+    <ClCompile Include="..\Classes\reader\CreatorReader.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\animation\Animation.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\animation\AnimationState.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\animation\BaseTimelineState.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\animation\TimelineState.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\animation\WorldClock.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\Armature.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\Bone.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\Constraint.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\DeformVertices.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\Slot.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\armature\TransformObject.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\cocos2dx\CCArmatureDisplay.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\cocos2dx\CCFactory.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\cocos2dx\CCSlot.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\cocos2dx\CCTextureAtlasData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\core\BaseObject.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\core\DragonBones.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\event\EventObject.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\factory\BaseFactory.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\geom\Point.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\geom\Transform.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\AnimationConfig.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\AnimationData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\ArmatureData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\BoundingBoxData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\CanvasData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\ConstraintData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\DisplayData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\DragonBonesData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\SkinData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\TextureAtlasData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\model\UserData.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\parser\BinaryDataParser.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\parser\DataParser.cpp" />
+    <ClCompile Include="..\Classes\reader\dragonBones\parser\JSONDataParser.cpp" />
+    <ClCompile Include="..\Classes\reader\lua-bindings\creator_reader_bindings.cpp" />
+    <ClCompile Include="..\Classes\reader\lua-bindings\dragonbones\lua_dragonbones_auto.cpp" />
+    <ClCompile Include="..\Classes\reader\lua-bindings\dragonbones\lua_dragonbones_manual.cpp" />
+    <ClCompile Include="..\Classes\reader\lua-bindings\reader\lua_creator_reader_auto.cpp" />
+    <ClCompile Include="..\Classes\reader\lua-bindings\reader\lua_creator_reader_manual.cpp" />
+    <ClCompile Include="..\Classes\reader\ui\PageView.cpp" />
+    <ClCompile Include="..\Classes\reader\ui\RichtextStringVisitor.cpp" />
+    <ClCompile Include="..\Classes\reader\ui\WidgetExport.cpp" />
+    <ClCompile Include="..\Classes\sqlite3\lsqlite3.c" />
+    <ClCompile Include="..\Classes\sqlite3\sqlite3.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimulatorWin.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\game.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\scripting\lua-bindings\proj.win32\libluacocos2d.vcxproj">
+      <Project>{9f2d6ce6-c893-4400-b50c-6db70cc2562f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\external\pbc\pbc.vcxproj">
+      <Project>{82356f33-956b-4931-9977-bd7994b1c761}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\tools\simulator\libsimulator\proj.win32\libsimulator.vcxproj">
+      <Project>{001b324a-bb91-4e83-875c-c92f75c40857}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

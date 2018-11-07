@@ -1,0 +1,1 @@
+{"name":"player","id":6,"level":0}
